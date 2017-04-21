@@ -1,4 +1,11 @@
 *.class
+DS_Store
+.DS_Store?
+.*._trace
+*.xtendbin
+xtend-gen/
+src-gen
+bin
 
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
