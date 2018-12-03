@@ -10,7 +10,6 @@ class MyDslPreferenceStoreInitializer implements IPreferenceStoreInitializer {
 	@Inject
 	extension MyDslPreferences;
 
-	@Override
 	override initialize(IPreferenceStoreAccess access) {
 		preferences.forEach [
 			access.writablePreferenceStore.setDefault(id, defaultValue);

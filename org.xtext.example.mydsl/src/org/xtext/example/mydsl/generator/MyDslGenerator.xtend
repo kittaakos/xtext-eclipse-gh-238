@@ -24,7 +24,6 @@ class MyDslGenerator extends AbstractGenerator {
 	@Inject
 	extension IPreferenceValuesProvider;
 
-	@Override
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
 		val name = resource.URI.lastSegment.substring(0, resource.URI.fileExtension.length - 2);
 		fsa.generateFile('''«name».txt''', '''«resource.timestamp»People to greet: ''' +

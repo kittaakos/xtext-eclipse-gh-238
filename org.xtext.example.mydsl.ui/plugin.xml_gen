@@ -204,6 +204,15 @@
 			</activeWhen>
 		</handler>
 	</extension>
+	<extension point="org.eclipse.core.contenttype.contentTypes">
+		<content-type
+			base-type="org.eclipse.core.runtime.text"
+			file-extensions="mydsl"
+			id="org.xtext.example.mydsl.MyDsl.contenttype"
+			name="MyDsl File"
+			priority="normal">
+		</content-type>
+	</extension>
 	<!-- adding resource factories -->
 	<extension
 		point="org.eclipse.emf.ecore.extension_parser">
@@ -388,12 +397,18 @@
 			class="org.xtext.example.mydsl.ui.MyDslExecutableExtensionFactory:org.eclipse.xtext.ui.compare.InjectableViewerCreator"
 			extensions="mydsl">
 		</viewer>
+		<contentTypeBinding
+			contentTypeId="org.xtext.example.mydsl.MyDsl.contenttype"
+			contentViewerId="org.xtext.example.mydsl.MyDsl.compare.contentViewers" />
 	</extension>
 	<extension point="org.eclipse.compare.contentMergeViewers">
 		<viewer id="org.xtext.example.mydsl.MyDsl.compare.contentMergeViewers"
 			class="org.xtext.example.mydsl.ui.MyDslExecutableExtensionFactory:org.eclipse.xtext.ui.compare.InjectableViewerCreator"
 			extensions="mydsl" label="MyDsl Compare">
 		</viewer>
+		<contentTypeBinding
+			contentTypeId="org.xtext.example.mydsl.MyDsl.contenttype"
+			contentMergeViewerId="org.xtext.example.mydsl.MyDsl.compare.contentMergeViewers" />
 	</extension>
 	<extension point="org.eclipse.ui.editors.documentProviders">
 		<provider id="org.xtext.example.mydsl.MyDsl.editors.documentProviders"

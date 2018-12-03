@@ -7,7 +7,6 @@ import static org.xtext.example.mydsl.preferences.MyDslPreferences.*
 
 class MyDslRootPreferencePage extends LanguageRootPreferencePage {
 
-	@Override
 	override protected createFieldEditors() {
 		addField(new BooleanFieldEditor(GEN_TIMESTAMP.id, "Generate timestamp", fieldEditorParent));
 	}
